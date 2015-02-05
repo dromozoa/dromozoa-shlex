@@ -1,3 +1,8 @@
+-- This file was auto-generated.
+package.loaded["dromozoa/shlex.lua"] = (function ()
+-- ===========================================================================
+-- dromozoa.shlex
+-- ===========================================================================
 -- Copyright (C) 2015 Tomoyuki Fujimori <moyu@dromozoa.com>
 --
 -- This file is part of dromozoa-shlex.
@@ -99,3 +104,5 @@ return {
   split = split;
   version = function () return "1.1" end;
 }
+-- ===========================================================================
+end)()
