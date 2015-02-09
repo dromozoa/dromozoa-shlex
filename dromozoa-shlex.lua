@@ -1,5 +1,5 @@
 -- This file was auto-generated.
-package.loaded["dromozoa/shlex.lua"] = (function ()
+package.loaded["dromozoa.shlex"] = (function ()
 -- ===========================================================================
 -- dromozoa.shlex
 -- ===========================================================================
