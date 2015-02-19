@@ -15,8 +15,6 @@
 -- You should have received a copy of the GNU General Public License
 -- along with dromozoa-shlex.  If not, see <http://www.gnu.org/licenses/>.
 
-local utf8 = require "dromozoa.utf8"
-
 local SQ = 0x27 -- U+0027 APORSTROPHE
 local DQ = 0x22 -- U+0022 QUOTATION MARK
 local SP = 0x20 -- U+0020 SPACE
@@ -30,21 +28,22 @@ local function split(s)
   local state
   local escape = false
   local result = {}
-  for p, c in utf8.codes(s) do
-    local s = utf8.char(c)
+  for i = 1, #s do
+    local c = s:byte(i)
+    local v = string.char(c)
     if state == SQ then
       if c == SQ then
         state = nil
       else
-        token[#token + 1] = s
+        token[#token + 1] = v
       end
     elseif state == DQ then
       if escape then
         if c == DQ or c == BS then
-          token[#token + 1] = s
+          token[#token + 1] = v
         else
           token[#token + 1] = "\\"
-          token[#token + 1] = s
+          token[#token + 1] = v
         end
         escape = false
       else
@@ -53,12 +52,12 @@ local function split(s)
         elseif c == BS then
           escape = true
         else
-          token[#token + 1] = s
+          token[#token + 1] = v
         end
       end
     else
       if escape then
-        token[#token + 1] = s
+        token[#token + 1] = v
         escape = false
       else
         if c == SP or c == HT or c == LF or c == CR then
@@ -75,7 +74,7 @@ local function split(s)
           elseif c == BS then
             escape = true
           else
-            token[#token + 1] = s
+            token[#token + 1] = v
           end
         end
       end

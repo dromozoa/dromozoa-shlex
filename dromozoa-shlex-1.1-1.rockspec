@@ -10,9 +10,6 @@ description = {
   homepage = "https://github.com/dromozoa/dromozoa-shlex/";
   maintainer = "Tomoyuki Fujimori <moyu@dromozoa.com>";
 }
-dependencies = {
-  "dromozoa-utf8 >= 1.2";
-}
 build = {
   type = "builtin";
   modules = {
