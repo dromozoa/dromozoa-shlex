@@ -1,8 +1,8 @@
 package = "dromozoa-shlex"
-version = "1.1-1"
+version = "1.2-1"
 source = {
-  url = "https://github.com/dromozoa/dromozoa-shlex/archive/v1.1.tar.gz";
-  file = "dromozoa-shlex-1.1.tar.gz";
+  url = "https://github.com/dromozoa/dromozoa-shlex/archive/v1.2.tar.gz";
+  file = "dromozoa-shlex-1.2.tar.gz";
 }
 description = {
   summary = "Simple lexical analyzer like Python's shlex";

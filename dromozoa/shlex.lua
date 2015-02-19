@@ -96,5 +96,4 @@ end
 
 return {
   split = split;
-  version = function () return "1.1" end;
 }
